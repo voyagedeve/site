@@ -8,9 +8,9 @@
     body {
     font-family: monospace, sans-serif;
     background-color: #000000;
-    margin: 200px;
-    padding: 100px;
-    height: auto;
+    margin: 0px;
+    padding: 0px;
+    min-height: 100vh;
     display: flex;
     justify-content: center; /* center the page horizontally */
     align-items: center;     /* center the page vertically */
@@ -21,6 +21,7 @@
     flex-direction: column;  /* stack header + container vertically */
     align-items: center;     /* keep header + container centered together */
     text-align: center;
+    padding: 50px;
     }
 
     h1 {
@@ -29,10 +30,13 @@
     }
 
     .container {
-    display: flex;
-    flex-wrap: wrap;       /* allow wrapping to new rows */
-    gap: 50px;             /* equal spacing between folders */
-    justify-content: center; /* <-- keeps rows centered under h1 */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 40px;                  /* space between items */
+    justify-content: center;    /* center the grid inside page */
+    max-width: 600px;           /* limits grid to ~4 columns (120px each + gaps) */
+    margin: 0 auto;             /* keeps it centered horizontally */
+    padding: 0px;            /* prevents touching screen edges on small screens */
     }
 
     .folder {
